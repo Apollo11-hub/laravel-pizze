@@ -58,19 +58,14 @@
     </div>
 
     <div class="form-group">
-      <label for="vegetariana">La pizza è vegetariana?</label>
-      <select   type="select"
-                name="vegetariana"
-                class="form-select @error('vegetariana') is-invalid @enderror"
-                id="vegetariana"
-                aria-label="select">
-            <option selected>Selezionare l'opzione:</option>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-            </select>
-            @error('vegetariana')
-            <p class="error-msg text-danger">{{ $message }}</p>
-            @enderror
+      <label for="vegetariana">La pizza è vegetariana?</label> <br>
+        <input type="radio" id="vegetariana" name="vegetariana" value="0" class="@error('vegetariana') is-invalid @enderror">
+        <label for="vegetariana">No</label><br>
+        <input type="radio" id="vegetariana" name="vegetariana" value="1" class="@error('vegetariana') is-invalid @enderror">
+        <label for="vegetariana">Sì</label><br>
+        @error('vegetariana')
+        <p class="error-msg text-danger">{{ $message }}</p>
+        @enderror
     </div>
 
     <button type="submit" class="btn btn-primary">CREA</button>

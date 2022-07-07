@@ -10,10 +10,10 @@
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Pizze</th>
-        <th scope="col">Prezzo</th>
-        <th scope="col">Azioni</th>
+        <th scope="col" class="col-3">ID</th>
+        <th scope="col" class="col-3">Pizze</th>
+        <th scope="col" class="col-3">Prezzo</th>
+        <th scope="col" class="col-3">Azioni</th>
       </tr>
     </thead>
     <tbody>
