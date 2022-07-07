@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class Pizza extends Model
 {
-    public static function GeneratoreSlug($nome){
+    public static function generatoreSlug($nome){
         $slug = Str::slug($nome, '-');
         $slug_base = $slug;
         $pizza_esistente = Pizza::where('slug', $slug)->first();

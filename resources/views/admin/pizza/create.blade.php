@@ -59,18 +59,22 @@
 
     <div class="form-group">
       <label for="vegetariana">La pizza è vegetariana?</label>
-      <input    type="text"
+      <select   type="select"
                 name="vegetariana"
-                class="form-control  @error('vegetariana') is-invalid @enderror"
+                class="form-select @error('vegetariana') is-invalid @enderror"
                 id="vegetariana"
-                value="{{ old('vegetariana') }}"
-                placeholder="Si o No">
-                @error('vegetariana')
-                    <p class="error-msg text-danger">{{ $message }}</p>
-                @enderror
+                aria-label="select">
+            <option selected>Selezionare l'opzione:</option>
+            <option value="0">No</option>
+            <option value="1">Sì</option>
+            </select>
+            @error('vegetariana')
+            <p class="error-msg text-danger">{{ $message }}</p>
+            @enderror
     </div>
 
     <button type="submit" class="btn btn-primary">CREA</button>
   </form>
 
 @endsection
+

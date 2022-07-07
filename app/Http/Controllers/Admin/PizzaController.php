@@ -42,7 +42,7 @@ class PizzaController extends Controller
 
         $data = $request->all();
 
-        $data['slug'] = Pizza::GeneratoreSlug(($data['nome']));
+        $data['slug'] = Pizza::generatoreSlug(($data['nome']));
 
         $new_pizza->fill($data);
 
@@ -86,7 +86,7 @@ class PizzaController extends Controller
     {
         $data = $request->all();
 
-        $data['slug'] = Pizza::GeneratoreSlug(($data['nome']));
+        $data['slug'] = Pizza::generatoreSlug(($data['nome']));
 
         $pizza->update($data);
 

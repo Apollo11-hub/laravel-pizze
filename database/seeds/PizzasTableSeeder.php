@@ -17,14 +17,18 @@ class PizzasTableSeeder extends Seeder
         foreach ($data as $pizza) {
             $new_pizza = new Pizza();
             $new_pizza->nome = $pizza['nome'];
-            $new_pizza->slug = Pizza::GeneratoreSlug($new_pizza->nome);
+            $new_pizza->slug = Pizza::generatoreSlug($new_pizza->nome);
             $new_pizza->prezzo = $pizza['prezzo'];
             $new_pizza->ingredienti = $pizza['ingredienti'];
-            $new_pizza->vegetariana = $pizza['vegetariana'];
+
+            if($pizza['vegetariana'] === 'sì'){
+                $new_pizza->vegetariana = true;
+            } else{
+                $new_pizza->vegetariana = false;
+            }
+
             $new_pizza->save();
         }
-
-
 
     }
 }

@@ -25,9 +25,9 @@ class PizzaRequest extends FormRequest
     {
         return [
             'nome' => 'required|max:20|min:3',
-            'prezzo' => 'required|numeric|between:0.00,100',
+            'prezzo' => 'required|numeric|between:0.00,999.99',
             'ingredienti' => 'required',
-            'vegetariana' => 'required|max:2|min:2',
+            'vegetariana' => 'required',
         ];
     }
 
@@ -38,11 +38,9 @@ class PizzaRequest extends FormRequest
             'nome.max' => 'Questo campo non può superare i :max caratteri!',
             'nome.min' => 'Questo campo non deve essere inferiore ai :min caratteri!',
             'prezzo.required' => 'Questo campo è obbligatorio!',
-            'prezzo.between' => 'Questo prezzo è incorretto numero max 99.99',
+            'prezzo.between' => 'Questo prezzo è incorretto numero :max',
             'ingredienti.required' => 'Questo campo è obbligatorio!',
-            'vegetariana.required' => 'Questo campo è obbligatorio!',
-            'vegetariana.max' => 'Questo campo non può superare i :max caratteri!',
-            'vegetariana.min' => 'Questo campo non deve essere inferiore ai :min caratteri!',
+            'vegetariana.required' => 'Questo campo è obbligatorio!'
         ];
     }
 }
