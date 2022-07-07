@@ -19,6 +19,7 @@
                 <td>{{ $pizza->prezzo }}&euro;</td>
                 <td class="d-flex">
                     <a class="btn btn-success" href="{{ route('admin.pizzas.show', $pizza) }}">SHOW</a>
+                    <a class="btn btn-primary mx-2" href="{{ route('admin.pizzas.edit', $pizza) }}">EDIT</a>
                 </td>
             </tr>
         @endforeach

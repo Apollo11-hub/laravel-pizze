@@ -20,4 +20,12 @@ class Pizza extends Model
         }
         return $slug;
     }
+
+    protected $fillable = [
+        'nome',
+        'slug',
+        'prezzo',
+        'ingredienti',
+        'vegetariana'
+    ];
 }
