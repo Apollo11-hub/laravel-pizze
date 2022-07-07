@@ -2,7 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<h1 class="container w-50">Dettagli della Pizza {{ $pizza->nome }}</h1>
+
+<div class="container w-50">
     <div class="card w-50">
         <h1>Pizza {{ $pizza->nome }}</h1>
 

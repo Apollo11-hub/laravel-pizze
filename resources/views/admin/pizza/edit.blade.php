@@ -2,6 +2,8 @@
 
 @section('content')
 
+<h1 class="container w-50">Modifiche per la Pizza {{ $pizza->nome }}</h1>
+
 <form class="container w-50" action="{{ route('admin.pizzas.update', $pizza) }}" method="POST">
 
     @csrf
