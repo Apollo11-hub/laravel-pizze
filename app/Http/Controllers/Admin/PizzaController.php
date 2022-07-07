@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Pizza;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use App\Http\Requests\PizzaRequest;
 
 class PizzaController extends Controller
 {
@@ -72,7 +72,7 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pizza $pizza)
+    public function update(PizzaRequest $request, Pizza $pizza)
     {
         $data = $request->all();
 

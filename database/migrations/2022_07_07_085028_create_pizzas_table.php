@@ -17,7 +17,7 @@ class CreatePizzasTable extends Migration
             $table->id();
             $table->string('nome', 20);
             $table->string('slug')->unique();
-            $table->decimal('prezzo', 4, 2);
+            $table->decimal('prezzo', 6, 2);
             $table->text('ingredienti');
             $table->string('vegetariana', 2);
             $table->timestamps();
