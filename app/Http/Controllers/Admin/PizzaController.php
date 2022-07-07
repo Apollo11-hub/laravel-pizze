@@ -27,7 +27,7 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pizza.create');
     }
 
     /**
@@ -36,9 +36,19 @@ class PizzaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PizzaRequest $request)
     {
-        //
+        $new_pizza = new Pizza;
+
+        $data = $request->all();
+
+        $data['slug'] = Pizza::GeneratoreSlug(($data['nome']));
+
+        $new_pizza->fill($data);
+
+        $new_pizza->save();
+
+        return redirect()->route('admin.pizzas.show', $new_pizza);
     }
 
     /**

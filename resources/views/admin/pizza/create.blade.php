@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="container w-50">Modifiche per la Pizza {{ $pizza->nome }}</h1>
+<h1 class="container w-50">Crea una nuova Pizza!</h1>
 
 @if($errors->any())
     <ul class="alert-danger container w-50">
@@ -12,10 +12,9 @@
     </ul>
 @endif
 
-<form class="container w-50" action="{{ route('admin.pizzas.update', $pizza) }}" method="POST">
+<form class="container w-50" action="{{ route('admin.pizzas.store') }}" method="POST">
 
     @csrf
-    @method('PUT')
 
     <div class="form-group">
       <label for="nome">Inserire nome pizza</label>
@@ -23,7 +22,7 @@
                 name="nome"
                 class="form-control @error('nome') is-invalid @enderror"
                 id="nome"
-                value="{{ old('nome', $pizza->nome) }}"
+                value="{{ old('nome') }}"
                 placeholder="Nome pizza">
                 @error('nome')
                     <p class="error-msg text-danger">{{ $message }}</p>
@@ -36,7 +35,7 @@
                 name="prezzo"
                 class="form-control @error('prezzo') is-invalid @enderror"
                 id="prezzo"
-                value="{{ old('prezzo', $pizza->prezzo) }}"
+                value="{{ old('prezzo') }}"
                 placeholder="Prezzo">
                 @error('prezzo')
                     <p class="error-msg text-danger">{{ $message }}</p>
@@ -50,8 +49,8 @@
                 name="ingredienti"
                 class="form-control  @error('ingredienti') is-invalid @enderror"
                 id="ingredienti"
-                value="{{ old('ingredienti', $pizza->ingredienti) }}"
-                placeholder="Ingredienti"> {{ old('ingredienti', $pizza->ingredienti) }}
+                value="{{ old('ingredienti') }}"
+                placeholder="Ingredienti"> {{ old('ingredienti') }}
             </textarea>
             @error('ingredienti')
                 <p class="error-msg text-danger">{{ $message }}</p>
@@ -64,14 +63,14 @@
                 name="vegetariana"
                 class="form-control  @error('vegetariana') is-invalid @enderror"
                 id="vegetariana"
-                value="{{ old('vegetariana', $pizza->vegetariana) }}"
+                value="{{ old('vegetariana') }}"
                 placeholder="Si o No">
                 @error('vegetariana')
                     <p class="error-msg text-danger">{{ $message }}</p>
                 @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary">MODIFICA</button>
+    <button type="submit" class="btn btn-primary">CREA</button>
   </form>
 
 @endsection

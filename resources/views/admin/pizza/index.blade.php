@@ -2,6 +2,11 @@
 
 @section('content')
 
+<a class="btn btn-success" href="{{ route('admin.pizzas.create') }}">CREA NUOVA PIZZA</a>
+
+<br>
+<br>
+
 <table class="table">
     <thead class="thead-dark">
       <tr>

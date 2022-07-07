@@ -13,7 +13,8 @@
         <h3>Vegetariana: {{ $pizza->vegetariana }}</h3>
     </div>
 
-    <a class="btn btn-primary" href="{{ route('admin.pizzas.index') }}">BACK</a>
+    <a class="btn btn-success" href="{{ route('admin.pizzas.index') }}">BACK</a>
+    <a class="btn btn-primary mx-2" href="{{ route('admin.pizzas.edit', $pizza) }}">EDIT</a>
 
 </div>
 

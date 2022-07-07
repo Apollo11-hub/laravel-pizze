@@ -26,9 +26,11 @@
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Pagina Pubblica!
                 </a>
-                <a class="navbar-brand" href="{{ route('admin.pizzas.index') }}">
-                    Le noste Pizze!
-                </a>
+                @auth()
+                    <a class="navbar-brand" href="{{ route('admin.pizzas.index') }}">
+                        Le noste Pizze!
+                    </a>
+                @endauth
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
