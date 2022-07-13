@@ -7,6 +7,12 @@ use Illuminate\Support\Str;
 
 class Pizza extends Model
 {
+
+    public function ingredients(){
+        return $this->belongsToMany('App\Ingredient');
+    }
+
+
     public static function generatoreSlug($nome){
         $slug = Str::slug($nome, '-');
         $slug_base = $slug;

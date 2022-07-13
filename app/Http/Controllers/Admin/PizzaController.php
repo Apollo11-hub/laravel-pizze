@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Pizza;
+use App\Ingredient;
 use Illuminate\Http\Request;
 use App\Http\Requests\PizzaRequest;
 
@@ -17,7 +18,8 @@ class PizzaController extends Controller
     public function index()
     {
         $pizzas = Pizza::orderBy('id', 'desc')->get();
-        return view('admin.pizza.index', compact('pizzas'));
+        $ingredients = Ingredient::all();
+        return view('admin.pizza.index', compact('pizzas','ingredients'));
     }
 
     /**

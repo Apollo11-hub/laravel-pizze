@@ -13,6 +13,7 @@
         <th scope="col" class="col-3">ID</th>
         <th scope="col" class="col-3">Pizze</th>
         <th scope="col" class="col-3">Prezzo</th>
+        <th scope="col" class="col-3">Ingredienti</th>
         <th scope="col" class="col-3">Azioni</th>
       </tr>
     </thead>
@@ -22,6 +23,17 @@
                 <th scope="row">{{ $pizza->id }}</th>
                 <td>{{ $pizza->nome }}</td>
                 <td>{{ $pizza->prezzo }}&euro;</td>
+
+                <td>
+                    @forelse ($ingredients as $ingredient )
+
+                    <span class="badge rounded-pill text-dark bg-light p-2">{{$ingredient->nome}}</span>
+                        {{$ingredient->nome}}
+                    @empty
+                        <span>---</span>
+                    @endforelse
+                </td>
+
                 <td class="d-flex">
                     <a class="btn btn-success" href="{{ route('admin.pizzas.show', $pizza) }}">SHOW</a>
                     <a class="btn btn-primary mx-2" href="{{ route('admin.pizzas.edit', $pizza) }}">EDIT</a>
